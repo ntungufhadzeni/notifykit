@@ -38,7 +38,7 @@ class TelegramNotifier(Notifier):
     def send(self, notification: Notification) -> DeliveryResult:
         chat_id = None
         if notification.metadata:
-            chat_id = notification.metadata.get("chat_id")  # type: ignore[assignment]
+            chat_id = notification.metadata.get("chat_id")
         chat_id = chat_id or self._config.default_chat_id
 
         if not chat_id:

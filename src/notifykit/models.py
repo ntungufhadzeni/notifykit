@@ -13,7 +13,7 @@ class NotificationStatus(str, Enum):
 
 @dataclass(frozen=True)
 class Notification:
-    receiver_id: int
+    receiver_id: str
     message: str
     event: str | None = None
     metadata: Mapping[str, Any] | None = None

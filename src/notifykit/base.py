@@ -19,7 +19,7 @@ class Notifier(ABC):
         """Send a notification through this channel."""
 
     @final
-    def __call__(self, receiver_id: int, message: str) -> DeliveryResult:
+    def __call__(self, receiver_id: str, message: str) -> DeliveryResult:
         """Convenience call style: channel(receiver_id, message)."""
         return self.send(Notification(receiver_id=receiver_id, message=message))
 
